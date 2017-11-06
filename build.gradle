@@ -42,7 +42,7 @@ project(':tracker-core') {
         compile project(':common')
     }
 
-    task fatJar(type: OneJar) {
+    task fatJarr(type: OneJar) {
         mainClass = 'jdev.tracker.Main'
     }
 }
