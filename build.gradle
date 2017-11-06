@@ -18,12 +18,14 @@ project(':common') {
 }
 
 project(':server-core') {
+    apply plugin: 'java-library-distribution'
     dependencies {
         compile project(':common')
     }
 }
 
 project(':tracker-core') {
+    apply plugin: 'java-library-distribution'
     dependencies {
         compile project(':common')
     }
@@ -31,12 +33,14 @@ project(':tracker-core') {
 
 
 project(':server-ui') {
+    apply plugin: 'java-library-distribution'
     dependencies {
         compile project(':common')
     }
 }
 
 project(':tracker-ui') {
+    apply plugin: 'java-library-distribution'
     dependencies {
         compile project(':common')
     }
