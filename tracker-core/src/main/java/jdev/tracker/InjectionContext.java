@@ -5,11 +5,13 @@ import jdev.tracker.services.DataPeekServices;
 import jdev.tracker.services.ScheduledService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Created by Егор on 18.11.2017.
  */
 @Configuration
+@EnableScheduling
 public class InjectionContext {
 
     @Bean
