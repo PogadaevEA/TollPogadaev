@@ -7,4 +7,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DataSentServices {
+    public void callFromInit() {
+        System.out.println("DataSentServices.callFromInit");
+    }
 }
