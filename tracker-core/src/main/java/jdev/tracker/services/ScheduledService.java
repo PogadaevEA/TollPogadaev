@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ScheduledService {
 
-    @Scheduled (fixedDelay = 3000)
+    private int count;
+
+    @Scheduled (cron = "*/4 * * * * *")
     private void tick() {
-        System.out.println("ScheduledService.tick");
+        System.out.println("ScheduledService.tick" + count++);
     }
 }

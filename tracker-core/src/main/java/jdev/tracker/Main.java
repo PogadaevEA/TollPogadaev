@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * Created by jdev on 07.03.2017.
+ * Created by Егор on 18.11.2017.
  */
 public class Main {
     public static void main(String... args)  {
