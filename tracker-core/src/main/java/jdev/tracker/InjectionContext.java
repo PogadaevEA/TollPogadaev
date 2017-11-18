@@ -2,6 +2,7 @@ package jdev.tracker;
 
 import jdev.tracker.services.DataSentServices;
 import jdev.tracker.services.DataPeekServices;
+import jdev.tracker.services.ScheduledService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,12 +13,17 @@ import org.springframework.context.annotation.Configuration;
 public class InjectionContext {
 
     @Bean
-    public DataPeekServices peekService() {
+    public DataPeekServices peekServices() {
         return new DataPeekServices();
     }
 
     @Bean
-    public DataSentServices sendService() {
+    public DataSentServices sentServices() {
         return new DataSentServices();
+    }
+
+    @Bean
+    public ScheduledService scheduledService() {
+        return new ScheduledService();
     }
 }
