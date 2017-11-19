@@ -25,8 +25,8 @@ public class DataSaveServices {
     void take() throws InterruptedException {
         log.info("take trying!!!");
         long current = System.currentTimeMillis();
-        log.info((current - previous) + " ScheduledQueueService.take " + queue.poll(500, TimeUnit.MILLISECONDS));
-//        System.out.println((current - previous) + " ScheduledQueueService.take " + queue.take());
+        //log.info((current - previous) + " DataSaveServices.take " + queue.poll(500, TimeUnit.MILLISECONDS));
+        System.out.println((current - previous) + " DataSaveServices.take " + queue.take());
         previous = current;
 
     }
@@ -34,7 +34,7 @@ public class DataSaveServices {
     @Scheduled (fixedDelay = 1_000)
     void put() throws InterruptedException {
         int i = putCount++;
-        log.info("ScheduledQueueService.put " + i);
+        log.info("DataSaveServices.put " + i);
         queue.put("new string => " + i);
 
     }

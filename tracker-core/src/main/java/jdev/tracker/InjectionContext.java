@@ -1,9 +1,6 @@
 package jdev.tracker;
 
-import jdev.tracker.services.DataSentServices;
-import jdev.tracker.services.DataPeekServices;
-import jdev.tracker.services.InjectedService;
-import jdev.tracker.services.ScheduledService;
+import jdev.tracker.services.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -26,6 +23,9 @@ public class InjectionContext {
     public DataSentServices sentServices() {
         return new DataSentServices();
     }
+
+    @Bean
+    public DataSaveServices saveServices() {return new DataSaveServices();}
 
     @Bean
     public ScheduledService scheduledService() {
