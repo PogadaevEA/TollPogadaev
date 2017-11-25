@@ -25,15 +25,7 @@ public class InjectionContext {
     }
 
     @Bean
-    public DataSaveServices saveServices() {return new DataSaveServices();}
+    public DataSaveServices saveServices() {
+        return new DataSaveServices();}
 
-    @Bean
-    public ScheduledService scheduledService() {
-        return new ScheduledService();
-    }
-
-    @Bean
-    public InjectedService injectedService() {
-        return new InjectedService();
-    }
 }
