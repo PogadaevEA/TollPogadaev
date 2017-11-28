@@ -24,13 +24,13 @@ public class GPSService {
     @Scheduled(cron = "${cron.prop}")
     private void init() throws Exception{
         dataPeekService.put(getGPS());
-       //System.out.println(getGPS());
+       //System.out.println(getGPS().toJson());
     }
 
 
 
 //    @Scheduled(cron = "${cron.prop}")
-    public String getGPS() throws Exception {
+    public PointDTO getGPS() throws Exception {
         PointDTO point = new PointDTO();
         point.setLat(this.latnew);
         point.setLon(this.lonnew);
@@ -41,7 +41,7 @@ public class GPSService {
         this.latnew = this.latnew + 0.1;
         this.lonnew = this.lonnew + 0.1;
         this.speednew = this.speednew + 1.0;
-        return point.toJson();
+        return point;
     }
 
 

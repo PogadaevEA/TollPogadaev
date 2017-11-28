@@ -1,5 +1,6 @@
 package jdev.tracker.services;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,9 @@ public class DataSendService {
     private long previous;
 
     @Scheduled(cron = "${cron.prop30sec}")
-    public void sendGPStoServer() throws InterruptedException {
+    public void sendGPStoServer() throws InterruptedException,JsonProcessingException {
         long current = System.currentTimeMillis();
-        log.info((current - previous) + dataPeekService.take());
+        log.info((current - previous) + dataPeekService.take().toJson());
         previous = current;
     }
 }
