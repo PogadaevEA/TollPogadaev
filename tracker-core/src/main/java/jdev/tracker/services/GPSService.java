@@ -12,15 +12,19 @@ import javax.annotation.PostConstruct;
  */
 @Service
 public class GPSService {
+    double latnew = 55.75222;
+    double lonnew = 37.61556;
+    double speednew = 20.0;
 
 
     @Autowired
     private DataPeekService dataPeekService;
 
     @PostConstruct
+    @Scheduled(cron = "${cron.prop}")
     private void init() throws Exception{
         dataPeekService.put(getGPS());
-       System.out.println(getGPS());
+       //System.out.println(getGPS());
     }
 
 
@@ -28,10 +32,15 @@ public class GPSService {
 //    @Scheduled(cron = "${cron.prop}")
     public String getGPS() throws Exception {
         PointDTO point = new PointDTO();
-        point.setLat(55.75222);
-        point.setLon(37.61556);
+        point.setLat(this.latnew);
+        point.setLon(this.lonnew);
+        point.setAzim(180.0);
+        point.setSpeed(this.speednew);
         point.setAutoId("К310МС70");
         point.setTime(System.currentTimeMillis());
+        this.latnew = this.latnew + 0.1;
+        this.lonnew = this.lonnew + 0.1;
+        this.speednew = this.speednew + 1.0;
         return point.toJson();
     }
 

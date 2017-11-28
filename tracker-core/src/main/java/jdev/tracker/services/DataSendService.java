@@ -18,7 +18,7 @@ public class DataSendService {
     private static final Logger log = LoggerFactory.getLogger(DataSendService.class);
     private long previous;
 
-    @Scheduled(fixedRate = 2000)
+    @Scheduled(cron = "${cron.prop30sec}")
     public void sendGPStoServer() throws InterruptedException {
         long current = System.currentTimeMillis();
         log.info((current - previous) + dataPeekService.take());

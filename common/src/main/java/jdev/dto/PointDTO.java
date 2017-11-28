@@ -9,6 +9,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class PointDTO {
     private double lat;
     private double lon;
+    private double azim;
+    private double speed;
     private String autoId;
     private long time;
 
@@ -46,6 +48,8 @@ public class PointDTO {
         return "PointDTO{" +
                 "lat=" + lat +
                 ", lon=" + lon +
+                ", azimut=" + azim +
+                ", speed=" + speed +
                 ", autoId='" + autoId + '\'' +
                 '}';
     }
@@ -57,4 +61,21 @@ public class PointDTO {
     public long getTime() {
         return time;
     }
+
+    public void setAzim(double azim) {
+        this.azim = azim;
+    }
+
+    public double getAzim() {
+        return azim;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
 }
