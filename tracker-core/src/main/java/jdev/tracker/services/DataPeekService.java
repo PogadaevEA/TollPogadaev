@@ -16,13 +16,13 @@ import org.slf4j.LoggerFactory;
 @Service
 public class DataPeekService {
 
-    private BlockingDeque<String> queue =  new LinkedBlockingDeque<>(100);
+    private BlockingDeque<PointDTO> queue =  new LinkedBlockingDeque<>(100);
 
-    String take() throws InterruptedException {
+    PointDTO take() throws InterruptedException{
         return queue.take();
     }
 
-    void put(String newpoint) throws InterruptedException {
+    void put(PointDTO newpoint) throws InterruptedException {
         queue.put(newpoint);
     }
 }
