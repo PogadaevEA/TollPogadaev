@@ -1,6 +1,6 @@
 package jdev.tracker.controllers;
 
-import jd.domain.Country;
+import jdev.dto.PointDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -36,9 +36,9 @@ public class CounterController {
     }
 
     @RequestMapping(value = "/relay")
-    public Country relay(){
-        Country country = restTemplate.getForObject(
-                "http://services.groupkt.com/country/get/iso2code/RU", Country.class);
+    public PointDTO relay(){
+        PointDTO country = restTemplate.getForObject(
+                "http://services.groupkt.com/country/get/iso2code/RU", PointDTO.class);
         return country;
     }
 }
