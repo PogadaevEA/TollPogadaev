@@ -1,4 +1,4 @@
-package jdev.tracker.controllers;
+package controllers;
 
 public class CurrentState {
 

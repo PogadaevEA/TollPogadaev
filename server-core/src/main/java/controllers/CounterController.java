@@ -1,4 +1,4 @@
-package jdev.tracker.controllers;
+package controllers;
 
 import jdev.dto.PointDTO;
 import org.springframework.beans.factory.annotation.Autowired;

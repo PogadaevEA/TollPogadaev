@@ -1,4 +1,4 @@
-package jdev.tracker.services;
+package services;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package jdev.tracker.controllers;
+package controllers;
 
 /**
  * Created by jdev on 05.05.2017.
