@@ -16,7 +16,7 @@ public class CreateFileService {
     private File file = new File("server-core//src//main//resources//points.txt");
 
     public void writeInFile(String text) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, false))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) {
             bw.write(text);
         } catch (IOException e) {
             e.printStackTrace();
