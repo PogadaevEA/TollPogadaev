@@ -18,6 +18,10 @@ public class DataPeekService {
 
     private BlockingDeque<PointDTO> queue =  new LinkedBlockingDeque<>(100);
 
+    public BlockingDeque<PointDTO> getQueue() {
+        return queue;
+    }
+
     PointDTO take() throws InterruptedException{
         return queue.take();
     }
