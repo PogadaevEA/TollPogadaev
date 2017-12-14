@@ -4,7 +4,6 @@ import jdev.dto.PointDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.PostConstruct;
 
 /**
@@ -24,12 +23,11 @@ public class GPSService {
     @Scheduled(cron = "${cron.prop}")
     private void init() throws Exception{
         dataPeekService.put(getGPS());
-       //System.out.println(getGPS().toJson());
     }
 
 
 
-//    @Scheduled(cron = "${cron.prop}")
+
     public PointDTO getGPS() throws Exception {
         PointDTO point = new PointDTO();
         point.setLat(this.latnew);
