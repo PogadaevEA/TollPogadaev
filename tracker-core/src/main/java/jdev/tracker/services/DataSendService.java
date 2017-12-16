@@ -21,10 +21,8 @@ public class DataSendService {
 
     @Scheduled(cron = "${cron.prop30sec}")
     public void sendGPStoServer() throws InterruptedException,JsonProcessingException {
-        int i=0;
         for (PointDTO point:dataPeekService.getQueue()) {
-            restTemplate.postForObject("http://localhost:8080/points", point, PointDTO.class);
-            i++;
+            restTemplate.postForObject("http://localhost:9000/points", point, PointDTO.class);
         }
     }
 }
