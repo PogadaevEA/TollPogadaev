@@ -51,6 +51,7 @@ public class PointDTO {
                 ", azimut=" + azim +
                 ", speed=" + speed +
                 ", autoId='" + autoId + '\'' +
+                ", time=" + time +
                 '}';
     }
 

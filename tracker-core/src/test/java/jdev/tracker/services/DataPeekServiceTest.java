@@ -41,6 +41,7 @@ public class DataPeekServiceTest {
         assertEquals(123, result.getAzim(), 0);
         assertEquals(40, result.getSpeed(), 0);
         assertEquals("k310ms70", result.getAutoId());
+        assertTrue(result.toJson().contains("\"time\":"));
     }
 
 }
