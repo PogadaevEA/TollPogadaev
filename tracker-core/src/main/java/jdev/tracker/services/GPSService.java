@@ -1,6 +1,7 @@
 package jdev.tracker.services;
 
 import jdev.dto.PointDTO;
+import jdev.tracker.dao.Point;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -22,17 +23,17 @@ public class GPSService {
     @PostConstruct
     @Scheduled(cron = "${cron.prop}")
     private void init() throws Exception{
-        dataPeekService.put(getGPS());
+        dataPeekService.putDB(getGPS());
     }
 
 
 
 
-    public PointDTO getGPS() throws Exception {
-        PointDTO point = new PointDTO();
+    public Point getGPS() throws Exception {
+        Point point = new Point();
         point.setLat(this.latnew);
         point.setLon(this.lonnew);
-        point.setAzim(180.0);
+        point.setAzimuth(180.0);
         point.setSpeed(this.speednew);
         point.setAutoId("К310МС70");
         point.setTime(System.currentTimeMillis());

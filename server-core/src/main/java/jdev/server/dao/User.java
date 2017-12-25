@@ -34,21 +34,13 @@ public class User {
     @JoinColumn(name = "ROLE")
     Role role;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "user_auto", joinColumns = {
-            @JoinColumn(name = "USER_ID", nullable = false, updatable = false)
-        },
-        inverseJoinColumns = {
-            @JoinColumn(name = "AUTO_ID", nullable = false, updatable = false)
-        }
-    )
-    Set<Auto> autos = new HashSet<>();
+
 
     public User() {
     }
 
     public User(Integer id, String firstName, String lastName, String patronymic, String dateOfBirth,
-                Long driversLicense, Role role, Set<Auto> autos) {
+                Long driversLicense, Role role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -56,13 +48,12 @@ public class User {
         this.dateOfBirth = dateOfBirth;
         this.driversLicense = driversLicense;
         this.role = role;
-        this.autos = autos;
     }
 
 
     public String toString() {
         return "User{ id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", patronymic=" + patronymic
-                + ", dateOfBirth=" + dateOfBirth + ", " + "driversLicense=" + driversLicense + ", role=" + role + ", " + autos + " }";
+                + ", dateOfBirth=" + dateOfBirth + ", " + "driversLicense=" + driversLicense + ", role=" + role + " }";
     }
 
     public int getId() {
@@ -121,11 +112,4 @@ public class User {
         this.role = role;
     }
 
-    public Set<Auto> getAutos() {
-        return autos;
-    }
-
-    public void setAutos(Set<Auto> autos) {
-        this.autos = autos;
-    }
 }

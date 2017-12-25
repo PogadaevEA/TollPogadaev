@@ -19,10 +19,6 @@ public class Point {
     @Column(name = "LON", nullable = false)
     Double lon;
 
-    @OneToOne(fetch = FetchType.EAGER, targetEntity = Auto.class, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "AUTO_ID")
-    Auto auto;
-
     @Column(name = "TIME", nullable = false)
     Long time;
 
@@ -34,7 +30,7 @@ public class Point {
 
 
     public String toString() {
-        return "Point{ id=" + id + ", lat=" + lat + ", lon=" + lon + ", auto=" + auto + ", time=" + time + ", " +
+        return "Point{ id=" + id + ", lat=" + lat + ", lon=" + lon + ", time=" + time + ", " +
                 "azimuth=" + azimuth + ", speed=" + speed + " }";
     }
 
@@ -60,14 +56,6 @@ public class Point {
 
     public void setLon(Double lon) {
         this.lon = lon;
-    }
-
-    public Auto getAuto() {
-        return auto;
-    }
-
-    public void setAuto(Auto auto) {
-        this.auto = auto;
     }
 
     public Long getTime() {
